@@ -1,0 +1,18 @@
+{
+  "manifest_version": 2,
+  "name": "Anti-sticky",
+  "description": "Hides sticky GUI elements. Frees up browser real estate on your mobile device for the page's primary content. Hides static headers, footers, and overlays when you scroll down.",
+  "homepage_url": "https://github.com/justinormont/AntiStickyExtension",
+  "version": "0.1.1",
+  "icons": {
+    "48": "icons/icon.png",
+    "96": "icons/icon@2x.png"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["./main.js"]
+    }
+  ]
+}
