@@ -26,7 +26,11 @@
 
     const getStickyDOM = (previous) => {
         const allDOM = document.body.getElementsByTagName('*');
-        const bodyHeight = document.body.clientHeight;
+        const bodyHeight = Math.max(
+            document.body.clientHeight,
+            document.documentElement.clientHeight,
+            document.documentElement.scrollHeight
+        );
         const newStickyDOM = [...allDOM].filter(a => {
             const pos = window.getComputedStyle(a, null).getPropertyValue('position');
             return ((pos === 'fixed' || pos === 'sticky') && a.getBoundingClientRect().height * 2 <= bodyHeight);
